@@ -1,5 +1,5 @@
 # qa-rails-ec-training-rose
-Rails共同開発講座(3期: ばら組)のリポジトリです。
+Rails共同開発講座(4期: ゆり組)のリポジトリです。
 
 ## Member
 - 氏名: Tatty
