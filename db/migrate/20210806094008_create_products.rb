@@ -10,6 +10,8 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       # t.references :sale_status, foreign_key: true
       # t.references :product_status, foreign_key: true
       # t.references :user, foreign_key: true
+
+      t.timestamps
     end
   end
 end

@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_08_06_094008) do
     t.text "description", size: :tiny
     t.timestamp "regist_date"
     t.boolean "delete_flag"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
