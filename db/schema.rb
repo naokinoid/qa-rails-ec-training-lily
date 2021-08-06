@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_06_094008) do
+ActiveRecord::Schema.define(version: 2021_08_06_132127) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "product_name", limit: 64
@@ -22,4 +22,17 @@ ActiveRecord::Schema.define(version: 2021_08_06_094008) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "purchase_price"
+    t.integer "purchase_quantity"
+    t.string "purchase_company", limit: 128
+    t.timestamp "order_date"
+    t.timestamp "purchase_date"
+    t.bigint "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_purchases_on_product_id"
+  end
+
+  add_foreign_key "purchases", "products"
 end
