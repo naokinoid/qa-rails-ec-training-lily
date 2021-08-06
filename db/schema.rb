@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_06_134444) do
+ActiveRecord::Schema.define(version: 2021_08_06_140805) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "category_name", limit: 32
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 2021_08_06_134444) do
     t.boolean "delete_flag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
+    t.bigint "sale_status_id"
+    t.bigint "product_status_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["product_status_id"], name: "index_products_on_product_status_id"
+    t.index ["sale_status_id"], name: "index_products_on_sale_status_id"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -52,5 +58,8 @@ ActiveRecord::Schema.define(version: 2021_08_06_134444) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "product_statuses"
+  add_foreign_key "products", "sale_statuses"
   add_foreign_key "purchases", "products"
 end
