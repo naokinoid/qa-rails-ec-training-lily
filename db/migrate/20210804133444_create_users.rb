@@ -15,11 +15,11 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.references :user_classification, null: false, foreign_key: true
       t.string :company_name, limit: 128
       t.boolean :delete_flag
+      t.string :password_digest, limit: 64
       t.timestamps
     end
 
     add_index :users, :email, unique: true
-    add_column :users, :password_digest, :string, limit: 64
 
   end
 end
