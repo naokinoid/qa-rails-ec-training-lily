@@ -116,7 +116,7 @@ $ docker-compose run --rm web yarn install
 ```
 
 ※実行後に、もし正常に起動していないようでしたら
-　dockerコンテナ削除後に、`docker-compose up`で再度起動してください。
+`docker-compose stop`でコンテナを停止させた後に、`docker-compose up`で再度起動してください。
 
 [この問題についての詳細はこちら]
 https://qiita.com/yama_ryoji/items/1de1f2e9e206382c4aa5
