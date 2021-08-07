@@ -6,7 +6,7 @@ class CreatePurchases < ActiveRecord::Migration[6.0]
       t.string :purchase_company, :limit =>128
       t.timestamp :order_date
       t.timestamp :purchase_date
-      t.references :product, foreign_key: true
+      t.references :product, foreign_key: true, null: false
 
       t.timestamps
     end

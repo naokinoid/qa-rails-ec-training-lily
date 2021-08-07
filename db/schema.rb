@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 2021_08_06_140805) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "product_name", limit: 64
     t.integer "price"
-    t.text "description", size: :tiny
+    t.text "description"
     t.timestamp "regist_date"
     t.boolean "delete_flag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "category_id"
-    t.bigint "sale_status_id"
-    t.bigint "product_status_id"
+    t.bigint "category_id", null: false
+    t.bigint "sale_status_id", null: false
+    t.bigint "product_status_id", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["product_status_id"], name: "index_products_on_product_status_id"
     t.index ["sale_status_id"], name: "index_products_on_sale_status_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_08_06_140805) do
     t.string "purchase_company", limit: 128
     t.timestamp "order_date"
     t.timestamp "purchase_date"
-    t.bigint "product_id"
+    t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_purchases_on_product_id"
