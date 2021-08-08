@@ -18,6 +18,12 @@ ActiveRecord::Schema.define(version: 2021_08_06_162127) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "user_classifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "user_classification_name", limit: 32
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "product_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "product_status_name", limit: 32
     t.datetime "created_at", precision: 6, null: false
@@ -58,8 +64,30 @@ ActiveRecord::Schema.define(version: 2021_08_06_162127) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "last_name", limit: 16
+    t.string "first_name", limit: 16
+    t.string "zipcode", limit: 16
+    t.string "prefecture", limit: 16
+    t.string "municipality", limit: 16
+    t.string "address", limit: 32
+    t.string "apartments", limit: 32
+    t.string "email", limit: 128
+    t.string "phone_number", limit: 16
+    t.bigint "user_classification_id", null: false
+    t.string "company_name", limit: 128
+    t.boolean "delete_flag"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest", limit: 64
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["user_classification_id"], name: "index_users_on_user_classification_id"
+  end
+
+  add_foreign_key "users", "user_classifications"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "product_statuses"
   add_foreign_key "products", "sale_statuses"
   add_foreign_key "purchases", "products"
+
 end
