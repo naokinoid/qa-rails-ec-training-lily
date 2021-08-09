@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_08_04_133444) do
     t.string "municipality", limit: 16
     t.string "address", limit: 32
     t.string "apartments", limit: 32
-    t.string "email", limit: 128
+    t.string "email", limit: 255
     t.string "phone_number", limit: 16
     t.bigint "user_classification_id", null: false
     t.string "company_name", limit: 128
