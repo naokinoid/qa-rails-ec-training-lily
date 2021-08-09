@@ -6,6 +6,7 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   VALID_NUMBER_REGEX = /\A[0-9]+\z/
+  VALID_PHONE_REGEX = /\A\d{10,11}\z/
 
   validates :password, presence: true, length: { in: 6..15 },
              format: { with: VALID_PASSWORD_REGEX }, allow_nil: true
@@ -21,6 +22,6 @@ class User < ApplicationRecord
              format: { with: VALID_EMAIL_REGEX },
              uniqueness: { case_sensitive: false }
   validates :phone_number,  presence: true, length: { maximum: 15 },
-             format: { with: VALID_NUMBER_REGEX }
+             format: { with: VALID_PHONE_REGEX }
 
 end
