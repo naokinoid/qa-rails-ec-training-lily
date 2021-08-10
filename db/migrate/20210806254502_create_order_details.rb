@@ -6,7 +6,8 @@ class CreateOrderDetails < ActiveRecord::Migration[6.0]
       t.datetime :shipment_date
       t.timestamps
       t.references :order, foreign_key: true
-      # t.references :shipment_status, foreign_key: true
+      t.references :shipment_status, foreign_key: true
+      t.references :product, foreign_key: true
     end
   end
 end
