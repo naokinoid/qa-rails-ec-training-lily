@@ -21,9 +21,11 @@ Product.create(
   category_id:Category.first.id,
   sale_status_id:SaleStatus.first.id,
   product_status_id:ProductStatus.first.id,
-  user_id:User.first.id)
+  user_id:User.first.id
+)
 
-Product.create(product_name:"ヘキサタープ",
+Product.create(
+  product_name:"ヘキサタープ",
   price:30000,
   description:"サイズ:使用時/約460×435×高さ230cm、収納時/約直径18×74cm、メインポール・サイドポール/約直径19×長さ180mm、重量:約7.6kg",
   regist_date:Time.now,
@@ -31,7 +33,8 @@ Product.create(product_name:"ヘキサタープ",
   category_id:Category.first.id,
   sale_status_id:SaleStatus.first.id,
   product_status_id:ProductStatus.first.id,
-  user_id:User.first.id)
+  user_id:User.first.id
+)
 
 Product.create(
   product_name:"可変式ダンベル",
@@ -42,9 +45,11 @@ Product.create(
   category_id:Category.second.id,
   sale_status_id:SaleStatus.first.id,
   product_status_id:ProductStatus.first.id,
-  user_id:User.second.id)
+  user_id:User.second.id
+)
 
-Product.create(product_name:"プロテイン",
+Product.create(
+  product_name:"プロテイン",
   price:3980,
   description:"【2021年モンドセレクション最高金賞】世界が認めた絶品チョコ風味！3～5シェイクで素早く溶けてダマにならない！",
   regist_date:Time.now,
@@ -52,4 +57,5 @@ Product.create(product_name:"プロテイン",
   category_id:Category.second.id,
   sale_status_id:SaleStatus.first.id,
   product_status_id:ProductStatus.first.id,
-  user_id:User.second.id)
+  user_id:User.second.id
+)
