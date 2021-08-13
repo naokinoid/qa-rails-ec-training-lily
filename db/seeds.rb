@@ -5,19 +5,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user_classification1 = UserClassification.create(
+  id: 1,
+  user_classification_name: "一般ユーザー"
+)
+user_classification2 = UserClassification.create(
+  id: 2,
+  user_classification_name: "管理者"
+)
+user_classificatio3 = UserClassification.create(
+  id:3,
+  user_classification_name: "購入者"
+)
+user_classification4 = UserClassification.create(
+  id:4,
+  user_classification_name: "販売者"
+)
+
 User.create(
-  last_name: "わんこ",
-  first_name: "犬の",
-  zipcode: "123-3456",
-  prefecture: "京都府",
-  municipality: "木津川市",
-  address: "加茂町大野919-1",
-  apartments: "",
-  email: "wanwanwanko@sample.com",
-  phone_number: "090-1234-5678",
-  company_name: "wankonyanko"
-  password: "aaa"
-  # password_digest: "",
-  # delete_flag: ,
-  # user_classification:
+  last_name: Gimei.last.kanji,
+  first_name: Gimei.first.kanji,
+  zipcode: Faker::Number.number(digits: 7),
+  prefecture: Gimei.prefecture.kanji,
+  municipality: Gimei.city.kanji,
+  address: Gimei.town.kanji,
+  apartments: Faker::Movies::HarryPotter.house,
+  email: Faker::Internet.free_email,
+  phone_number: Faker::PhoneNumber.cell_phone,
+  company_name: Faker::Company.name,
+  password: Faker::Lorem.characters(number: 5..15),
+  user_classification_id: Faker::Number.between(from: 1, to: 4)
 )
