@@ -100,7 +100,7 @@ sans-serif;
         <div>
           <ul>
             <p>
-            　<%= @user.first_name + " " + @user.last_name + "さん" %>
+            　<%= "#{@user.first_name} #{@user.last_name} さん"%>
             </p>
           </ul>
           <ul class="navbar-nav">
@@ -135,7 +135,7 @@ sans-serif;
                 氏名
               </td>
               <td>
-                <%= @user.first_name + " " + @user.last_name %>
+                <%= "#{@user.first_name} #{@user.last_name}" %>
               </td>
             </tr>
 
@@ -144,8 +144,8 @@ sans-serif;
                 住所
               </td>
               <td>
-                〒<%= @user.zipcode[0..2] + "-" + @user.zipcode[3..6] %><br>
-                <%= @user.prefecture + @user.municipality + @user.address + @user.apartments %>
+                <%= "〒#{@user.zipcode[0..2]}-#{@user.zipcode[3..6]}" %><br>
+                <%= "#{@user.prefecture}#{@user.municipality}#{@user.address}#{@user.apartments}" %>
               </td>
             </tr>
             <tr>
