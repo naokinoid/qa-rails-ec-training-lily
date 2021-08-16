@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_06_254502) do
   end
 
   create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "oder_detail_number", limit: 64
+    t.string "order_detail_number", limit: 64
     t.integer "order_quantity"
     t.datetime "shipment_date"
     t.datetime "created_at", precision: 6, null: false
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2021_08_06_254502) do
     t.string "municipality", limit: 16
     t.string "address", limit: 32
     t.string "apartments", limit: 32
-    t.string "email", limit: 255
+    t.string "email"
     t.string "phone_number", limit: 16
     t.bigint "user_classification_id", null: false
     t.string "company_name", limit: 128
