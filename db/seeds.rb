@@ -22,7 +22,8 @@ user_classification4 = UserClassification.create(
   user_classification_name: "販売者"
 )
 
-user1 = User.create(
+
+user1 = User.create!(
   last_name: Gimei.last.kanji,
   first_name: Gimei.first.kanji,
   zipcode: Faker::Number.number(digits: 7),
@@ -31,13 +32,13 @@ user1 = User.create(
   address: Gimei.town.kanji,
   apartments: Faker::Movies::HarryPotter.house,
   email: "user1@sample.com",
-  phone_number: Faker::PhoneNumber.cell_phone,
+  phone_number: Faker::Number.number(digits: 10),
   company_name: Faker::Company.name,
-  password: password1,
+  password: "password1",
   user_classification_id: Faker::Number.between(from: 1, to: 4)
 )
 
-user2 = User.create(
+user2 = User.create!(
   last_name: Gimei.last.kanji,
   first_name: Gimei.first.kanji,
   zipcode: Faker::Number.number(digits: 7),
@@ -46,8 +47,8 @@ user2 = User.create(
   address: Gimei.town.kanji,
   apartments: Faker::Movies::HarryPotter.house,
   email: "user2@sample.com",
-  phone_number: Faker::PhoneNumber.cell_phone,
+  phone_number: Faker::Number.number(digits: 11),
   company_name: Faker::Company.name,
-  password: password2,
+  password: "password2",
   user_classification_id: Faker::Number.between(from: 1, to: 4)
 )
