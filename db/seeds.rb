@@ -65,8 +65,8 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_detail_number: "1111",
     order_quantity: 1,
     shipment_date: "2021-08-02",
-    order_id:Order.first.id,
-    product_id:Product.first.id,
+    order_id: order1.id,
+    product_id:Product.arr[0].id,
     shipment_status_id:ShipmentStatus.first.id
   )
 
@@ -74,61 +74,61 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_detail_number: "2222",
     order_quantity: 1,
     shipment_date: "2021-08-02",
-    order_id:Order.arr[1].id,
+    order_id: order1.id,
     product_id:Product.arr[1].id,
-    shipment_status_id:ShipmentStatus.arr[1].id
+    shipment_status_id:ShipmentStatus.second.id
   )
 
   order_detail3 = OrderDetail.create!(
     order_detail_number: "3333",
     order_quantity: 1,
     shipment_date: "2021-08-02",
-    order_id:Order.arr[2].id,
+    order_id: order1.id,
     product_id:Product.arr[2].id,
-    shipment_status_id:ShipmentStatus.arr[2].id
+    shipment_status_id:ShipmentStatus.first.id
   )
 
   order_detail4 = OrderDetail.create!(
     order_detail_number: "4444",
     order_quantity: 1,
     shipment_date: "2021-08-02",
-    order_id:Order.arr[3].id,
+    order_id: order1.id,
     product_id:Product.arr[3].id,
-    shipment_status_id:ShipmentStatus.arr[3].id
+    shipment_status_id:ShipmentStatus.second.id
   )
 
   order_detail5 = OrderDetail.create!(
     order_detail_number: "5555",
     order_quantity: 1,
     shipment_date: "2021-08-02",
-    order_id:Order.arr[4].id,
-    product_id:Product.arr[4].id,
-    shipment_status_id:ShipmentStatus.arr[4].id
+    order_id: order2.id,
+    product_id:Product.arr[0].id,
+    shipment_status_id:ShipmentStatus.first.id
   )
 
   order_detail6 = OrderDetail.create!(
     order_detail_number: "6666",
     order_quantity: 1,
     shipment_date: "2021-08-02",
-    order_id:Order.arr[5].id,
-    product_id:Product.arr[5].id,
-    shipment_status_id:ShipmentStatus.arr[5].id
+    order_id: order2.id,
+    product_id:Product.arr[1].id,
+    shipment_status_id:ShipmentStatus.second.id
   )
 
   order_detail7 = OrderDetail.create!(
     order_detail_number: "7777",
     order_quantity: 1,
     shipment_date: "2021-08-02",
-    order_id:Order.arr[6].id,
-    product_id:Product.arr[6].id,
-    shipment_status_id:ShipmentStatus.arr[6].id
+    order_id: order2.id,
+    product_id:Product.arr[2].id,
+    shipment_status_id:ShipmentStatus.first.id
   )
 
   order_detail8 = OrderDetail.create!(
     order_detail_number: "8888",
     order_quantity: 1,
     shipment_date: "2021-08-02",
-    order_id:Order.arr[7].id,
-    product_id:Product.arr[7].id,
-    shipment_status_id:ShipmentStatus.arr[7].id
+    order_id: order2.id,
+    product_id:Product.arr[3].id,
+    shipment_status_id:ShipmentStatus.second.id
   )
