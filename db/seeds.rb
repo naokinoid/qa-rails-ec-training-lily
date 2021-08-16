@@ -30,10 +30,10 @@ user1 = User.create(
   municipality: Gimei.city.kanji,
   address: Gimei.town.kanji,
   apartments: Faker::Movies::HarryPotter.house,
-  email: Faker::Internet.free_email,
+  email: "user1@sample.com",
   phone_number: Faker::PhoneNumber.cell_phone,
   company_name: Faker::Company.name,
-  password: Faker::Lorem.characters(number: 5..15),
+  password: password1,
   user_classification_id: Faker::Number.between(from: 1, to: 4)
 )
 
@@ -45,9 +45,9 @@ user2 = User.create(
   municipality: Gimei.city.kanji,
   address: Gimei.town.kanji,
   apartments: Faker::Movies::HarryPotter.house,
-  email: Faker::Internet.free_email,
+  email: "user2@sample.com",
   phone_number: Faker::PhoneNumber.cell_phone,
   company_name: Faker::Company.name,
-  password: Faker::Lorem.characters(number: 5..15),
+  password: password2,
   user_classification_id: Faker::Number.between(from: 1, to: 4)
 )
