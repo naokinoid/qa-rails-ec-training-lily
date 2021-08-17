@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 user_classification1 = UserClassification.create(
   id: 1,
   user_classification_name: "一般ユーザー"
@@ -70,7 +62,7 @@ ProductStatus.create(product_status_name:"中古 – 非常に良い")
 ProductStatus.create(product_status_name:"中古 – 良い")
 ProductStatus.create(product_status_name:"中古 – 可")
 
-Product.create(
+product1 = Product.create(
   product_name:"LEDランタン",
   price:5000,
   description:"キャンプサイトを優しく彩るアンティーク風LEDランタン。明るさ : 20〜370ルーメン 無段階調節",
@@ -82,7 +74,7 @@ Product.create(
   user_id:User.first.id
 )
 
-Product.create(
+product2 = Product.create(
   product_name:"ヘキサタープ",
   price:30000,
   description:"サイズ:使用時/約460×435×高さ230cm、収納時/約直径18×74cm、メインポール・サイドポール/約直径19×長さ180mm、重量:約7.6kg",
@@ -94,7 +86,7 @@ Product.create(
   user_id:User.first.id
 )
 
-Product.create(
+product3 = Product.create(
   product_name:"可変式ダンベル",
   price:12800,
   description:"【5段階調整の筋トレダンベル】：5kg～25kgの間でお好みの重さに5段階で調節可能！初心者から上級者まで自分に合ったウエイトでトレーニングできます",
@@ -106,7 +98,7 @@ Product.create(
   user_id:User.second.id
 )
 
-Product.create(
+product4 = Product.create(
   product_name:"プロテイン",
   price:3980,
   description:"【2021年モンドセレクション最高金賞】世界が認めた絶品チョコ風味！3～5シェイクで素早く溶けてダマにならない！",
@@ -129,8 +121,8 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_quantity: 1,
     shipment_date: "2021-08-02",
     order_id: order1.id,
-    product_id:Product.find(1).id,
-    shipment_status_id:ShipmentStatus.first.id
+    product_id: product1.id,
+    shipment_status_id: shipment_status1.id
   )
 
   order_detail2 = OrderDetail.create!(
@@ -138,8 +130,8 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_quantity: 1,
     shipment_date: "2021-08-02",
     order_id: order1.id,
-    product_id:Product.find(2).id,
-    shipment_status_id:ShipmentStatus.second.id
+    product_id: product2.id,
+    shipment_status_id: shipment_status2.id
   )
 
   order_detail3 = OrderDetail.create!(
@@ -147,8 +139,8 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_quantity: 1,
     shipment_date: "2021-08-02",
     order_id: order1.id,
-    product_id:Product.find(3).id,
-    shipment_status_id:ShipmentStatus.first.id
+    product_id: product3.id,
+    shipment_status_id: shipment_status1.id
   )
 
   order_detail4 = OrderDetail.create!(
@@ -156,8 +148,8 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_quantity: 1,
     shipment_date: "2021-08-02",
     order_id: order1.id,
-    product_id:Product.find(4).id,
-    shipment_status_id:ShipmentStatus.second.id
+    product_id: product4.id,
+    shipment_status_id: shipment_status2.id
   )
 
   order_detail5 = OrderDetail.create!(
@@ -165,8 +157,8 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_quantity: 1,
     shipment_date: "2021-08-02",
     order_id: order2.id,
-    product_id:Product.find(1).id,
-    shipment_status_id:ShipmentStatus.first.id
+    product_id: product1.id,
+    shipment_status_id: shipment_status1.id
   )
 
   order_detail6 = OrderDetail.create!(
@@ -174,8 +166,8 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_quantity: 1,
     shipment_date: "2021-08-02",
     order_id: order2.id,
-    product_id:Product.find(2).id,
-    shipment_status_id:ShipmentStatus.second.id
+    product_id: product2.id,
+    shipment_status_id: shipment_status2.id
   )
 
   order_detail7 = OrderDetail.create!(
@@ -183,8 +175,8 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_quantity: 1,
     shipment_date: "2021-08-02",
     order_id: order2.id,
-    product_id:Product.find(3).id,
-    shipment_status_id:ShipmentStatus.first.id
+    product_id: product3.id,
+    shipment_status_id: shipment_status1.id
   )
 
   order_detail8 = OrderDetail.create!(
@@ -192,6 +184,6 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     order_quantity: 1,
     shipment_date: "2021-08-02",
     order_id: order2.id,
-    product_id:Product.find(4).id,
-    shipment_status_id:ShipmentStatus.second.id
+    product_id: product4.id,
+    shipment_status_id: shipment_status2.id
   )
