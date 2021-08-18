@@ -31,8 +31,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use bcrypt for encrypting password
 gem 'bcrypt',  '3.1.13'
+
 gem 'faker'
 gem 'gimei'
+gem 'bootstrap', '5.0.0.beta3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
