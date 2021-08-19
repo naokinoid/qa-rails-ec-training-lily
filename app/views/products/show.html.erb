@@ -96,7 +96,7 @@ sans-serif;
         </div>
         <div>
           <ul>
-            <p>さん</p>
+            <p>〇〇 ××さん</p>
           </ul>
           <ul class="navbar-nav">
             <a class="nav-link text-dark" href="#">商品検索</a>
@@ -110,16 +110,16 @@ sans-serif;
     </nav>
   </header>
   <main>
-  <% if@product.present? %>
+  <% if @product.present? %>
     <div class="container">
       <div class="mt-5 jumbotron bg-white">
-        <h1 class="text-center"><!--商品情報--><%= @product.product_name %></h1>
-        <h2 class="text-center">商品1</h2>
+        <h1 class="text-center"><%= @product.product_name %></h1>
+        <h2 class="text-center">商品<%= @product.id%></h2>
         <div class="offset-sm-3">
-          <p class="offset-sm-6">商品カテゴリ：食料品</p>
-          <p><!--商品説明--><%= @product.description %></p>
+          <p class="offset-sm-6"><%= @product.category.category_name %></p>
+          <p><%= @product.description %></p>
           <p>探求学園Rails専攻限定商品！</p>
-          <p class="mt-4 mb-5"><!--価格：500円--><%= @product.price %></p>
+          <p class="mt-4 mb-5"><%= @product.price %></p>
         </div>
         <div class="row justify-content-center">
           <label for="order_quanity" class="mt-1 col-sm-1">購入個数</label>
@@ -222,27 +222,6 @@ sans-serif;
 </head>
 
 <body>
-  <!--<header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <div class="navbar-nav me-auto">
-          <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
-        </div>
-        <div>
-          <ul>
-            <p>〇〇 ××さん</p>
-          </ul>
-          <ul class="navbar-nav">
-            <a class="nav-link text-dark" href="#">商品検索</a>
-            <a class="nav-link text-dark" href="#">カート</a>
-            <a class="nav-link text-dark" href="#">注文履歴</a>
-            <a class="nav-link text-dark" href="#">ユーザ情報</a>
-            <a class="nav-link text-dark" href="#">ログアウト</a>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>-->
   <main>
     <div class="container">
       <div class="mt-5 text-center">
@@ -253,10 +232,6 @@ sans-serif;
     </div>
     </div>
   </main>
-  <!--<footer>
-    <h1>探求学園Rails専攻</h1>
-    <p>© 2020 QuestAcademia, All rights reserved</p>
-  </footer>-->
 </body>
 
 </html>
