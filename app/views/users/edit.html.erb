@@ -110,7 +110,7 @@ sans-serif;
     </nav>
   </header>
   <main>
-
+    <%= form_with model: @user do |form| %>
     <h2 class="text-center mt-5">ユーザ情報修正</h2>
     <table width="50%" style="margin-left:350px">
       <tr height="40">
@@ -118,8 +118,8 @@ sans-serif;
           氏名<span style="float: right">姓</span>
         </td>
         <td>
-          <input type="text" style="margin-left:10px" maxlength="10" required><span
-            style="margin-right:35px"></span>名<input type="text" style="margin-left:10px" maxlength="10" required>
+          <%= form.text_field :last_name, class: "hoge", maxlength: 10 %><span
+            style="margin-right:35px"></span>名<%= form.text_field :first_name, class: "hoge", maxlength: 10 %>
         </td>
       </tr>
 
@@ -198,6 +198,7 @@ sans-serif;
         <button class="btn btn-danger" type="submit">退会</button>
       </div>
     </div>
+    <% end %>
   </main>
   <footer>
     <h1>探求学園Rails専攻</h1>
