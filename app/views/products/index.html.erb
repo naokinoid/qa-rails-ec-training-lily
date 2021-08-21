@@ -86,20 +86,20 @@
             </thead>
             <tbody>
               <% @products.each do |product| %>
-              <tr>
-                <td scope="row">
-                  <%= product.product_name %>
-                </td>
-                <td class="text-center">
-                  <%= product.category.category_name %>
-                </td>
-                <td class="text-center">
-                  <%= "#{product.price}円" %>
-                </td>
-                <td class="text-center">
-                  <%= link_to "商品詳細", product_path(product) , class:"btn btn-primary btn-sm"%>
-                </td>
-              </tr>
+                <tr>
+                  <td scope="row">
+                    <%= product.product_name %>
+                  </td>
+                  <td class="text-center">
+                    <%= product.category.category_name %>
+                  </td>
+                  <td class="text-center">
+                    <%= "#{product.price}円" %>
+                  </td>
+                  <td class="text-center">
+                    <%= link_to "商品詳細", product_path(product) , class:"btn btn-primary btn-sm"%>
+                  </td>
+                </tr>
               <% end %>
             </tbody>
           </table>
