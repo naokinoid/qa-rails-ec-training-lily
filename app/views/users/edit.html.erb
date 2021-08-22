@@ -128,7 +128,7 @@ sans-serif;
           住所<span style="float: right">〒</span>
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="25" pattern="\d{3}-?\d{4}" required>
+        <%= form.text_field :zipcode, class: "hoge", maxlength: 7 %>
         </td>
       </tr>
 
