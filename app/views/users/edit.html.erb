@@ -182,7 +182,7 @@ sans-serif;
           電話番号
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="65" pattern="(^[0-9]+$){1,15}" required>
+          <%= form.text_field :phone_number, size: "65" %>
         </td>
       </tr>
     </table>
