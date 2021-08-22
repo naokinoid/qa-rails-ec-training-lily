@@ -137,7 +137,7 @@ sans-serif;
           都道府県
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="50" maxlength="5" required>
+          <%= form.text_field :prefecture, maxlength: 5 ,size: "50" %>
         </td>
       </tr>
 
@@ -146,7 +146,7 @@ sans-serif;
           市町村区
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="50" maxlength="10" required>
+          <%= form.text_field :municipality, maxlength: 10 ,size: "50" %>
         </td>
       </tr>
 
@@ -155,7 +155,7 @@ sans-serif;
           番地
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="50" maxlength="15" required>
+          <%= form.text_field :address, maxlength: 50 ,size: "50" %>
         </td>
       </tr>
 
@@ -164,7 +164,7 @@ sans-serif;
           マンション<br>部屋番号</br>
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="50" maxlength="20" required>
+          <%= form.text_field :apartments, maxlength: 20 ,size: "50" %>
         </td>
       </tr>
 
