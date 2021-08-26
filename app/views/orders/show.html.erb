@@ -43,7 +43,9 @@
               <p>注文番号：<%= @order.order_number %></p>
               <p>注文状態：<%= @order.order_details.first.shipment_status.shipment_status_name %></p>
               <div class="text-end">
-              <%= has_prepared_shipment_status?(@order) %>
+              <% if @order.has_prepared_shipment_status?(@order) %>
+                <%= link_to "注文をキャンセルする", "#", class: "btn btn-danger" %>
+              <% end %>
               </div>
             </div>
             <table class="table table-borderless mt-3">
