@@ -158,7 +158,7 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     shipment_date: "2021-08-02",
     order_id: order2.id,
     product_id: product1.id,
-    shipment_status_id: shipment_status1.id
+    shipment_status_id: shipment_status2.id
   )
 
   order_detail6 = OrderDetail.create!(
@@ -176,7 +176,7 @@ shipment_status2 = ShipmentStatus.create(shipment_status_name: "発送済")
     shipment_date: "2021-08-02",
     order_id: order2.id,
     product_id: product3.id,
-    shipment_status_id: shipment_status1.id
+    shipment_status_id: shipment_status2.id
   )
 
   order_detail8 = OrderDetail.create!(
