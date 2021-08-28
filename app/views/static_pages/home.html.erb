@@ -1,4 +1,4 @@
-  <% if user_signed_in? %>
+  <% if logged_in? %>
     <main>
       <h1 class="mt-5 text-center">探求学園Rails専攻 ECサイト</h1>
       <div class="text-center mt-4">
@@ -20,7 +20,7 @@
           すでにアカウントを<br>
           お持ちの方はこちら
         </p>
-        <a class="btn btn-primary" href="#" role="button" href="sessions/new.html.erb">ログイン</a>
+         <%= link_to "ログイン", "#", class: "btn btn-primary", role: "button" %>
       </div>
     </div>
     </main>
