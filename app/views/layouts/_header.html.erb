@@ -1,21 +1,45 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <div class="navbar-nav me-auto">
-        <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
+
+  <% if logged_in? %>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <div class="navbar-nav me-auto">
+          <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
+        </div>
+        <div>
+          <ul>
+            <p><%= "#{@user.last_name} #{@user.first_name}さん"%></p>
+          </ul>
+          <ul class="navbar-nav">
+            <a class="nav-link text-dark" href="#">商品検索</a>
+            <a class="nav-link text-dark" href="#">カート</a>
+            <a class="nav-link text-dark" href="#">注文履歴</a>
+            <a class="nav-link text-dark" href="#">ユーザ情報</a>
+            <%= link_to "ログアウト", logout_path , method: :delete ,class:"nav-link text-dark"%>
+          </ul>
+        </div>
       </div>
-      <div>
-        <ul>
-          <p><%= "#{@user.last_name} #{@user.first_name}さん"%></p>
-        </ul>
-        <ul class="navbar-nav">
-          <a class="nav-link text-dark" href="#">商品検索</a>
-          <a class="nav-link text-dark" href="#">カート</a>
-          <a class="nav-link text-dark" href="#">注文履歴</a>
-          <a class="nav-link text-dark" href="#">ユーザ情報</a>
-          <%= link_to "ログアウト", logout_path , method: :delete ,class:"nav-link text-dark"%>
-        </ul>
+    </nav>
+
+  <% else %>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <div class="navbar-nav mr-auto">
+          <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <li><%= link_to "ログイン", login_path ,class:"text-dark" %></li>
+              <li><%= link_to "新規登録", "#" ,class:"text-dark" %></li>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+
+  <% end %>
+
 </header>
