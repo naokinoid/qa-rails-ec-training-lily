@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(@user_params)
     if @user
       flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
-      redirect_to "/login"
+      redirect_to login_path
     end
   end
 
