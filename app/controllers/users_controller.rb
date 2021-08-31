@@ -8,6 +8,16 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+  def new
+    @user = User.new
+  end
+  def create
+    @user = User.new(@user_params)
+    if @user
+      flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
+      redirect_to "/login"
+    end
+  end
 
   private
 
