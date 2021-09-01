@@ -1,5 +1,4 @@
 module SessionsHelper
-
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -24,5 +23,4 @@ module SessionsHelper
       redirect_to login_path
     end
   end
-
 end
