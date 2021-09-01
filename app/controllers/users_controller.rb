@@ -5,21 +5,22 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
   def update
-    def update
-      @user = User.find(params[:id])
-      if @user.update(user_params)
-        redirect_to("/users/:id")
-      else
-        render 'edit'
-        flash[:false] = "ミスです"
-      end
+    @user = User.find(params[:id])
+    if @user.update!(user_params)
+      flash[:success] = "情報更新に成功しました"
+      redirect_to("/users/:id")
+    else
+      flash.now[:danger] = "情報更新に失敗しました"
+      render 'edit'
     end
   end
+
 
   private
 
     def user_params
-      params.require(:user).permit(:last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :email, :phone_number)
+      params.require(:user).permit(:last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :email, :phone_number, :password)
     end
 end
