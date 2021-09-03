@@ -3,11 +3,11 @@ class OrdersController < ApplicationController
   before_action :correct_user, only: %i[show]
 
   def show
-    @order = Order.find_by(id: params[:id])
+    @order = current_user.orders.find_by(id: params[:id])
   end
 
   def index
-    @orders = Order.order("order_date DESC").page(params[:page]).per(15)
+    @orders = current_user.orders.order("order_date DESC").page(params[:page]).per(15)
   end
 
   private

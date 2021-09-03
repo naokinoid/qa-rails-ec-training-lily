@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   belongs_to :user_classification
+  has_many :orders, dependent: :destroy
   before_save { self.email = email.downcase }
   has_secure_password
 
