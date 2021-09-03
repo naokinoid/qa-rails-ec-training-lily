@@ -8,12 +8,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update!(user_params)
+    if @user.update(user_params)
       flash[:success] = "情報更新に成功しました"
       redirect_to controller: :users, action: :show
     else
-      flash.now[:danger] = "情報更新に失敗しました"
-      render 'edit'
+      flash[:danger] = "情報更新に失敗しました"
+      redirect_to controller: :users, action: :edit
     end
   end
 
