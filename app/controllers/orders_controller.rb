@@ -8,5 +8,4 @@ class OrdersController < ApplicationController
   def index
     @orders = current_user.orders.order("order_date DESC").page(params[:page]).per(15)
   end
-
 end
