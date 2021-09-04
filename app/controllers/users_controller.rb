@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash.now[:danger] = "情報更新に失敗しました"
-      render 'edit'
+      render "edit"
     end
   end
 
