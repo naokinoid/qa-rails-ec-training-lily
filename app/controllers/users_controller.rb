@@ -16,8 +16,8 @@ class UsersController < ApplicationController
       flash[:success] = "情報更新に成功しました"
       redirect_to controller: :users, action: :show
     else
-      flash[:danger] = "情報更新に失敗しました"
-      redirect_to controller: :users, action: :edit
+      flash.now[:danger] = "情報更新に失敗しました"
+      render 'edit'
     end
   end
 
