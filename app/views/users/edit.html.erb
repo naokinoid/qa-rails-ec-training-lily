@@ -4,11 +4,15 @@
     <table width="50%" style="margin-left:350px">
       <tr height="40">
         <td align="left">
-          氏名<span style="float: right">姓</span>
+          氏名
+          <span style="float: right">姓</span>
         </td>
         <td>
-          <%= form.text_field :last_name, maxlength: 10 %><span
-            style="margin-right:35px"></span>名<%= form.text_field :first_name, maxlength: 10 %>
+          <%= form.text_field :last_name, maxlength: 10 %>
+        </td>
+        <td>
+          <span style="float: left">名</span>
+          <%= form.text_field :first_name, maxlength: 10 %>
         </td>
       </tr>
 
