@@ -3,7 +3,7 @@
     <div class="jumbotron text-center bg-white mt-5">
       <h2>お客様情報登録</h2>
     </div>
-      <%= form_for(@user, url: signup_path) do |f| %>
+      <%= form_with(model: @user) do |f| %>
       <div class="row mb-5 ml-5">
         <div class="col-sm-6 offset-sm-3">
           <div>

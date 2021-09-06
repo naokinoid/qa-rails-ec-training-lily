@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(@user_params)
-    if @user
+    @user = User.new(user_params)
+    @user.user_classification_id = 1
+    if @user.save
       flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
       redirect_to login_path
     end
@@ -30,5 +31,9 @@ class UsersController < ApplicationController
         flash[:danger] = "他人の情報にアクセスすることはできません。"
         redirect_to root_url
       end
+    end
+
+    def user_params
+      params.require(:user).permit(:last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :phone_number, :email, :password)
     end
 end
