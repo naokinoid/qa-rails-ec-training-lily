@@ -21,12 +21,7 @@
       <div class="mx-auto row">
         <label class="col-sm-2 col-form-label col-form-label-lg" for="exampleFormControlSelect2">商品カテゴリ</label>
         <div class="col-sm-4">
-          <select id="exampleFormControlSelect2" class="form-control">
-            <option selected>未選択</option>
-              <% @categories.each do |category| %>
-                <option><%= category.category_name %></option>
-              <% end %>
-          </select>
+        <%= form.select :category_name, Category.all.map { |category| category.category_name }, {}, { id: "exampleFormControlSelect2", class: "form-control" } %>
         </div>
       </div>
     </div>
