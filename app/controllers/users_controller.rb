@@ -20,6 +20,8 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
       redirect_to login_path
+    else
+      render 'new'
     end
   end
 
