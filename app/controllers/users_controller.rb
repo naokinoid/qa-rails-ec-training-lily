@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-<<<<<<< HEAD
   def new
     @user = User.new
   end
@@ -23,7 +22,9 @@ class UsersController < ApplicationController
       redirect_to login_path
     else
       render 'new'
-=======
+    end
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
@@ -32,7 +33,6 @@ class UsersController < ApplicationController
     else
       flash.now[:danger] = "情報更新に失敗しました"
       render "edit"
->>>>>>> development
     end
   end
 
