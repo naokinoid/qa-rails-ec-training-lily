@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy!
+    redirect_to root_url
+  end
+
   private
 
     def correct_user
