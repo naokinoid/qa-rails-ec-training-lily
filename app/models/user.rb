@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :orders, dependent: :destroy
+  has_many :products, dependent: :destroy
   belongs_to :user_classification
   has_many :orders, dependent: :destroy
   before_save { self.email = email.downcase }
