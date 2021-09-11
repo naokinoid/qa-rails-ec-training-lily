@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy!
     redirect_to root_url
-    
+  end
+
   def new
     @user = User.new
   end
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
       flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
       redirect_to login_path
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -54,9 +55,5 @@ class UsersController < ApplicationController
         flash[:danger] = "他人の情報にアクセスすることはできません。"
         redirect_to root_url
       end
-    end
-
-    def user_params
-      params.require(:user).permit(:last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :phone_number, :email, :password)
     end
 end
