@@ -1,32 +1,30 @@
 <main>
-  <%= form_with url: products_path, method: :get, local: true do |form| %>
+  <%= form_with url: search_path, method: :get, local: true do |form| %>
   <% if @products.present? %>
     <div class="mt-5 mx-auto" style="width: 200px">
       <h2>商品検索画面</h2>
     </div>
     <div class="container mt-5">
-      <form action="#" method="post">
-        <div class="mx-auto row">
-          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">商品名</label>
-          <div class="col-sm-6">
-            <%= form.text_field :search, class: "form-control form-control-lg", id: "colFormLabelLg", required: true %>
-          </div>
-          <div class="col-sm-4 mt-1">
-            <%= form.submit '検索', class: "btn btn-primary" %>
-          </div>
+      <div class="mx-auto row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">商品名</label>
+        <div class="col-sm-6">
+          <%= form.text_field :keyword, value: @keyword, class: "form-control form-control-lg", id: "colFormLabelLg", required: true %>
         </div>
-      </form>
-    </div>
+        <div class="col-sm-4 mt-1">
+          <%= form.submit '検索', class: "btn btn-primary" %>
+        </div>
+      </div>
+   </div>
     <div class="container">
       <div class="mx-auto row">
         <label class="col-sm-2 col-form-label col-form-label-lg" for="exampleFormControlSelect2">商品カテゴリ</label>
         <div class="col-sm-4">
-        <%= form.select :category_name, Category.all.map { |category| category.category_name }, {}, { id: "exampleFormControlSelect2", class: "form-control" } %>
+          <%= form.select :category_id, Product.all.map { |p| p.category_id }.uniq, {}, { id: "exampleFormControlSelect2", class: "form-control" } %>
         </div>
       </div>
     </div>
     <div class="container">
-      <p><%= "全#{@products.total_count}件" %></p>
+      <p><%= "全#{@products.count}件" %></p>
       <table class="table table-hover product-table" border="1" style="border-collapse: collapse">
         <thead>
           <tr class="table-header">
