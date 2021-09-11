@@ -22,7 +22,7 @@
           住所<span style="float: right">〒</span>
         </td>
         <td colspan="2">
-        <%= form.text_field :zipcode, size: "25" %>
+          <%= form.text_field :zipcode, size: "25" %>
         </td>
       </tr>
 
@@ -103,9 +103,8 @@
           <%= form.submit '修正', class: "btn btn-primary" %>
         </div>
       </div>
-
       <div class="col-5 offset-2">
-        <button class="btn btn-danger" type="submit">退会</button>
+        <%= link_to "退会", user_path(@user), class: "btn btn-danger", type: "submit", method: :delete, data: { confirm: "ユーザーデータが全て削除されます。本当に退会しますか？" } %>
       </div>
     </div>
   <% end %>
