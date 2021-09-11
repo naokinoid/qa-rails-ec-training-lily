@@ -10,9 +10,7 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Order.find_by(id: params[:id])
-    if @order.destroy!
-      redirect_to orders_path
-    end
+    @order = Order.find_by(id: params[:id]).destroy!
+    redirect_to orders_path
   end
 end
