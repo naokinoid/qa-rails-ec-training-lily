@@ -15,6 +15,5 @@ class ProductsController < ApplicationController
     @keyword = params[:keyword]
     # byebug
     render "index"
-
   end
 end
