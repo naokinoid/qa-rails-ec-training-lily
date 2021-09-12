@@ -7,6 +7,6 @@ class Product < ApplicationRecord
   belongs_to :user
 
   def self.search(keyword, category_id)
-    where("product_name LIKE(?)", "%#{keyword}%").where(category_id: category_id.to_s)
+    where("product_name LIKE(?)", "%#{keyword}%").where(category_id: "#{category_id}#")
   end
 end
