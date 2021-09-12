@@ -10,6 +10,27 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy!
+    redirect_to root_url
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    @user.user_classification_id = 1
+    if @user.save
+      flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
+      redirect_to login_path
+    else
+      render "new"
+    end
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
