@@ -20,6 +20,7 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
+  # rubocop:disable Metrics::AbcSize
   def create
     @order = Order.new(
       order_date: Time.zone.now,
@@ -42,6 +43,7 @@ class CartsController < ApplicationController
     session[:cart] = nil
     redirect_to order_path(@order)
   end
+  # rubocop:enable Metrics::AbcSize
 
   def destroy
     session[:cart].delete_at(index_of_added_item)
