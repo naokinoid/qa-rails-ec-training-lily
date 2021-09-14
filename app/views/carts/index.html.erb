@@ -60,7 +60,7 @@
                 </td>
                 <td class="align-middle">
                   <%= form_with(url: change_quantity_path, local: true) do |f| %>
-                    <%= f.text_field :product_id, value:item["product_id"], hidden:true %>
+                    <%= hidden_field_tag :product_id, item["product_id"] %>
                     <%= f.number_field :quantity, value:item["quantity"], min: 1, max:999, required:true %>&nbsp;&nbsp;個
                     <%= f.submit "更新", class: 'btn btn-light' %>
                   <% end %>
