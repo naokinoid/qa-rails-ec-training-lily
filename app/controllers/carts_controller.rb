@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   def index
-    @cart = session[:cart].nil? ? [] : session[:cart]
+    @cart = session[:cart] || []
   end
 
   def add_item
