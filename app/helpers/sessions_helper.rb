@@ -5,6 +5,7 @@ module SessionsHelper
 
   def log_out
     session.delete(:user_id)
+    session[:cart] = nil
   end
 
   def logged_in?
