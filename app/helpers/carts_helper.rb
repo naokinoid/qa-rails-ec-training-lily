@@ -16,10 +16,6 @@ module CartsHelper
   end
 
   def get_total(cart)
-    total = 0
-    cart.each do |item|
-      total += get_sub_total(item)
-    end
-    total
+    cart.sum {get_sub_total(_1)}
   end
 end
