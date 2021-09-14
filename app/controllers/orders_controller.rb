@@ -14,8 +14,7 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  # rubocop:disable Metrics::AbcSize
-  def create
+  def create # rubocop:disable Metrics::AbcSize
     @order = Order.new(
       order_date: Time.zone.now,
       order_number: Order.last.order_number.to_i + 1,
@@ -37,5 +36,4 @@ class OrdersController < ApplicationController
     session[:cart] = nil
     redirect_to order_path(@order)
   end
-  # rubocop:enable Metrics::AbcSize
 end
