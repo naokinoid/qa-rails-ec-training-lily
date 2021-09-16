@@ -1,7 +1,6 @@
 <main>
-  <%= form_with url: products_path, method: :get, local: true do |form| %>
-
   <% if @products.present? %>
+    <%= form_with url: products_path, method: :get, local: true do |form| %>
     <div class="mt-5 mx-auto" style="width: 200px">
 
       <h2>商品検索画面</h2>
@@ -69,7 +68,7 @@
         </ul>
       </nav>
     </div>
-
+    <% end %>
   <% else %>
     <div class="container">
       <div class="mt-5 text-center">
@@ -80,5 +79,4 @@
     </div>
 
   <% end %>
- <% end %>
 </main>
