@@ -24,4 +24,11 @@ module SessionsHelper
       redirect_to login_path
     end
   end
+
+  def ensure_normal_user
+    if @current_user.email == "guest@example.com"
+      flash[:danger] = "ゲストユーザーは編集及び削除ができません。"
+      redirect_to root_path
+    end
+  end
 end
