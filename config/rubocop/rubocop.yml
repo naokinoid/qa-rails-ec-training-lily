@@ -122,7 +122,7 @@ Lint/Void:
 # 30 まではギリギリ許せる範囲だったけど
 # リリースごとに 3 ずつぐらい下げていきます。20 まで下げたい。
 Metrics/AbcSize:
-  Max: 24
+  Max: 25
 
 # Gemfile, Guardfile は DSL 的で基本的に複雑にはならないので除外
 # rake, rspec, environments, routes は巨大な block 不可避なので除外
@@ -545,4 +545,3 @@ RSpec/IdenticalEqualityAssertion: # (new in 2.4)
   Enabled: true
 RSpec/Rails/AvoidSetupHook: # (new in 2.4)
   Enabled: true
-
