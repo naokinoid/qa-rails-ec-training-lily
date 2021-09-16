@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   delete    '/logout', to: 'sessions#destroy'
   get       '/signup', to: 'users#new'
   post      '/signup', to: 'users#create'
+  post      '/add_item',        to: 'carts#add_item'
+  post      '/change_quantity', to: 'carts#change_quantity'
+  delete    '/delete_item',     to: 'carts#destroy'
 
   resources :products
   resources :users
   resources :orders
+  resources :carts
 end
