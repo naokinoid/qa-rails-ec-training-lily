@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post      '/add_item',        to: 'carts#add_item'
   post      '/change_quantity', to: 'carts#change_quantity'
   delete    '/delete_item',     to: 'carts#destroy'
+
   resources :products
   resources :users
   resources :orders
