@@ -1,3 +1,5 @@
+<% provide(:title, "ユーザー情報更新") %>
+
 <main>
   <%= form_with(model: @user, local: true) do |form| %>
     <center><%= render "shared/error_messages", object: form.object %></center>
