@@ -33,6 +33,8 @@ class OrdersController < ApplicationController
       @order_detail.save!
     end
 
+    UserNotifierMailer.send_orderedlist(@order).deliver
+
     session[:cart] = nil
     redirect_to order_path(@order)
   end
