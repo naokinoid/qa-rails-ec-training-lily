@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.user_classification_id = 1
     if @user.save
+      UserNotifierMailer.send_signup_email(@user).deliver
       flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
       redirect_to login_path
     else
