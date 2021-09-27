@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
 
-  unless !Rails.env.development?
-    rescue_from Exception,                      with: :_render_500
-    rescue_from ActiveRecord::RecordNotFound,   with: :_render_404
-    rescue_from ActionController::RoutingError, with: :_render_404
+  if Rails.env.development?
+    rescue_from Exception,                      with: :render500
+    rescue_from ActiveRecord::RecordNotFound,   with: :render404
+    rescue_from ActionController::RoutingError, with: :render404
   end
 
   def routing_error
@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   private
-    def _render_404(e = nil)
+
+    def render404(e = nil)
       logger.info "Rendering 404 with excaption: #{e.message}" if e
 
       if request.format.to_sym == :json
@@ -22,7 +23,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def _render_500(e = nil)
+    def render500(e = nil)
       logger.error "Rendering 500 with excaption: #{e.message}" if e
 
       if request.format.to_sym == :json
@@ -31,5 +32,4 @@ class ApplicationController < ActionController::Base
         render "errors/500.html", status: :internal_server_error
       end
     end
-
 end
