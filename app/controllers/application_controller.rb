@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
 
-  if Rails.env.development?
+  unless Rails.env.development?
     rescue_from Exception,                      with: :render500
     rescue_from ActiveRecord::RecordNotFound,   with: :render404
     rescue_from ActionController::RoutingError, with: :render404
