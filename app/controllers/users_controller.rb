@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[show edit]
-  before_action :correct_user, only: %i[show edit]
+  before_action :logged_in_user, only: %i[show edit destroy update]
+  before_action :correct_user, only: %i[show edit destroy update]
   before_action :ensure_normal_user, only: %i[edit destroy]
 
   def show
