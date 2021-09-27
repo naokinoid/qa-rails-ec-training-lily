@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   resources :users
   resources :orders
   resources :carts
+
+  get '*not_found' => 'application#routing_error'
+  post '*not_found' => 'application#routing_error'
 end
