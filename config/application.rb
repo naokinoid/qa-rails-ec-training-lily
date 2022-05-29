@@ -22,7 +22,7 @@ module Myapp
     # RSpec関連のファイル作成の設定　falseになっているものは作成されない
     config.generators do |g|
       g.test_framework :rspec,
-        fixtures: false,
+        # fixtures: false,
         view_specs: false,
         helper_specs: false,
         routing_specs: false
